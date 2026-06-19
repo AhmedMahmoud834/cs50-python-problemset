@@ -6,6 +6,7 @@ def main():
 
     # Check for command-line usage
     if not len(sys.argv) == 3:
+        print("Usage: " + sys.argv[0] + " database-location person-dna")
         sys.exit(1)
         return
 
