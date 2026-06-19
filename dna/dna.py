@@ -4,13 +4,13 @@ import sys
 
 def main():
 
-    # TODO: Check for command-line usage
+    # Check for command-line usage
     if not len(sys.argv) == 3:
         sys.exit(1)
         return
 
 
-    # TODO: Read database file into a variable
+    # Read database file into a variable
     rows = []
     with open(sys.argv[1]) as file:
         reader = csv.DictReader(file)
@@ -18,16 +18,16 @@ def main():
         for row in reader:
             rows.append(row)
 
-    # TODO: Read DNA sequence file into a variable
+    # Read DNA sequence file into a variable
     with open(sys.argv[2]) as file:
         sequence = file.read()
 
-    # TODO: Find longest match of each STR in DNA sequence
+    # Find longest match of each STR in DNA sequence
     str_counts = {}
     matched = {}
     for sub_seq in row_headers:
         str_counts[sub_seq] = longest_match(sequence, sub_seq)
-    # TODO: Check database for matching profiles
+    # Check database for matching profiles
     for row in rows:
         for key, value in str_counts.items():
             if not value == int(row[key]):
